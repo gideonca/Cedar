@@ -1,0 +1,33 @@
+# Rust build artifacts
+/target/
+Cargo.lock
+*.rlib
+*.rmeta
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# OS-specific files
+Thumbs.db
+.DS_Store
+
+# Rust-specific
+*.pdb
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Document files
+document.txt
