@@ -26,7 +26,7 @@ pub fn is_authorized(
     // Build the authorization request
     let principal = EntityUid::from_str(&format!(r#"User::"{user}""#))?;
     let action_uid = EntityUid::from_str(&format!(r#"Action::"{action}""#))?;
-    let resource_uid = EntityUid::from_str(&format!(r#"Resource::"{resource}""#))?;
+    let resource_uid = EntityUid::from_str(&format!(r#"Folder::"{resource}""#))?;
 
     let request = Request::new(principal, action_uid, resource_uid, Context::empty(), None)?;
     let entities = Entities::empty();

@@ -1,7 +1,15 @@
 [package]
 name = "src"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[[bin]]
+name = "policy02_demo"
+path = "src/policy02_demo.rs"
 
 [dependencies]
 cedar-policy = "4.15.0"

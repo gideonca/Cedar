@@ -1,11 +1,14 @@
 mod document_handler;
 mod policy_utils;
 
+use std::path::Path;
 use policy_utils::{is_authorized, display_header};
+use document_handler::display_update_history;
 
-const DOCUMENTS_FOLDER: &str = "documents_folder";
+const DOCUMENTS_FOLDER: &str = "documents";
 const DEFAULT_USER: &str = "Bob";
 const POLICY_FILE: &str = "policy02.cedar";
+const DOCUMENT: &str = "document.txt";
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let user = std::env::args().nth(1).unwrap_or_else(|| DEFAULT_USER.to_string());
@@ -21,6 +24,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Test deleting a file from the documents folder
     test_action(&user, "delete")?;
+
+    // Display document update history
+    display_update_history(Path::new(DOCUMENT))?;
 
     Ok(())
 }
